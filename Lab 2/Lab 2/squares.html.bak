@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<title>Rotating Squares</title>
+<body>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+// note: the data in the buffer has 2 floats per point
+attribute vec2 vPosition;
+
+uniform float theta;
+void main() {
+	// rotate the point by angle theta (theta is in radians)
+	float s = sin(theta), c = cos(theta);
+
+    gl_Position.x = c * vPosition.x - s * vPosition.y;
+    gl_Position.y = s * vPosition.x + c * vPosition.y;
+    gl_Position.z = 1.0;
+    gl_Position.w = 1.0;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+void main() {
+	// constant red color for all primitives
+    gl_FragColor = vec4(1., 0., 0., 1.);
+}
+</script>
+
+<script type="text/javascript" src="./squares.js"></script>
+<script type="text/javascript" src="./utils.js"></script>
+
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>

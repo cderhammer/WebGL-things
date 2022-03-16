@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Points</title>
+<body>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vColor;
+varying vec4 fCol;
+void main() {
+	gl_Position = vPosition;
+	fCol = vColor;
+	gl_PointSize = 8.;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+varying vec4 fCol;
+void main() {
+    gl_FragColor = fCol;
+}
+</script>
+<script type="text/javascript" src="./points.js"></script>
+<script type="text/javascript" src="./utils.js"></script>
+
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+<p>
+<button type = "button" id = "draw_point"> Draw Points </button><p>
+<button type = "button" id = "pick_point"> Pick Points </button><p></p>
+Message Area<br>
+<textarea id = "myTextArea" rows = "5" cols = "40"> 
+</textarea>
+</body>
+</html>

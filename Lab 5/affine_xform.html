@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>Points</title>
+<body>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec2 vPosition;
+uniform mat4 xform_matrix;
+
+void main() {
+	vec4 pos = vec4(vPosition, 0., 1.);
+	// transform position by the transform matrix
+	gl_Position = xform_matrix*pos;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+void main() {
+    gl_FragColor = vec4(1., 0., 0., 1.);
+}
+</script>
+<script type="text/javascript" src="./lab5.js"></script>
+<script type="text/javascript" src="./utils.js"></script>
+
+
+
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+<p>
+	<button type = "button" id = "default_button"> Default Square</button>
+		<button type = "button" id = "rotate_button"> Rotate Square</button>
+		<button type = "button" id = "scale_button"> Scale Square</button><p>
+	
+
+Message Area<br>
+<textarea id = "myTextArea" rows = "20" cols = "100"> 
+</textarea>
+</body>
+</html>

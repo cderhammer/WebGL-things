@@ -1,0 +1,10 @@
+Task 1:
+Build the UI, Update the logic of the handlers
+1. Rename button
+2. Toggle between drawing mode and point selection mode (just like toggling point drawing on and off)
+When points are drawn/selected display vertex locations in text box.
+
+Task: 2
+
+Take in mouse position and check it against all the vertice's of points created.
+if the point is within defined bounds, update it to a specified color.

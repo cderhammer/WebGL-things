@@ -1,0 +1,48 @@
+Lab_3_Scaffold
+
+function setEventHandlers() {
+
+// event handler when mouse button is down, this function will generate points as long as a mouse button is down
+
+    // window.onmousedown = function (evt) { // mouse handler
+		// add a vertex, positioning it randomly
+		// if (counter < MaxPoints) {
+			// generatePoint();
+			// text_area.value += "Mouse button Pressed..\n";
+			// call generateMouseCoord()
+		
+		// once the coordinates are recieved, draw a point (use a var to store the coordinates then call that var in the
+		// generatePoint() function
+		
+		// print the coordinates in the text area
+			
+		}
+    }
+	
+	// window.addEventListener ("keydown", function(evt) { //keyboard handler
+		// this event will update the boolean flag dictating whether or not a point can be drawn true = draw point (on)
+		// false = do not draw point (off) 
+		{
+			// generatePoint();
+			// text_area.value += "Keyboard Key 1, code: " + evt.code + " pressed..\n"
+		}
+		
+		
+	})
+	document.getElementById("draw_point").onclick =  function (evt) {// button handler
+	// this event will update the boolean flag dictating whether or not a point can be drawn true = draw point (on)
+		// false = do not draw point (off) 
+		// generatePoint();
+		// text_area.value += "Button 'DrawPoints' pressed..\n"
+	}
+	
+	// window.onmousepress = function generateMouseCoord() {
+		// this function will return the coordinates of the mouse button when pressed
+		// var x = event.clientX
+		// var y = event.clientY
+		// where client is the canvas we are operating in
+		// store the coordinates in a variable and use a formula to convert between -1.0 to 1.0 (NDC) for task 2
+	
+	}
+	
+}
