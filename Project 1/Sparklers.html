@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<title>Coordinate Systems</title>
+
+<body>
+
+	<body style="background-color: blueviolet;">
+	</body>
+	<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec2 vPosition;
+attribute vec3 vColor;
+varying vec4 fCol;
+
+// transform matrix from world to NDC
+uniform mat4 world2NDC_Xform;
+
+void main() {
+	gl_Position = world2NDC_Xform*vec4(vPosition, 0., 1.);
+	fCol = vec4(vColor, 1.);
+	gl_PointSize = 8.;
+}
+</script>
+
+	<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+varying vec4 fCol;
+void main() {
+    gl_FragColor = fCol;
+}
+</script>
+	<script type="text/javascript" src="./utils.js"></script>
+	<script type="text/javascript" src="./project1.js"></script>
+	<script type="text/javascript" src="./mat_vec.js"></script>
+
+	<div style="text-align:center;">
+		<canvas id="cvs" width="750" height="100">
+			<p>canvas unsupported</p>
+		</canvas>
+		<script>var cvs = document.getElementById('cvs');
+			var ctx = cvs.getContext('2d');
+			ctx.font = 'normal bold 40px papyrus';
+			ctx.shadowColor = "white";
+			ctx.shadowBlur = 7;
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+
+			ctx.fillText("Sparklers! (refresh when animation ends)", 375, 50);
+		</script>
+	</div>
+
+	<div style="text-align:center;">
+		<canvas id="gl-canvas" width="1100" height="1100" class="canvas">
+			Oops ... your browser doesn't support the HTML5 canvas element
+			<canvas style="background-color: blueviolet;"></canvas>
+	</div>
+	<p>
+
+</body>
+
+</html>
